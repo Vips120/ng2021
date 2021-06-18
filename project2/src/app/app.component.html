@@ -1,0 +1,36 @@
+<h1 class="title is-1">
+  {{title}}
+</h1>
+<div class="container">
+  <h2 class="title is-1" [style.color]="total_experience1 > total_experience2 ? 'green': 'red'">
+    {{total_experience1 > total_experience2 ?
+    'WINNER': 'LOOSER'
+    }}
+  </h2>
+  <p>
+    TOTAL EXPERIENCE: {{total_experience1}}
+  </p>
+  <div class="columns is-multiline">
+
+    <div class="column is-3" *ngFor="let item of result">
+      <app-card [id]="item.id" [name]="item.name" [type]="item.type" [exp]="item.base_experience"
+        [total_experience]="total_experience1"></app-card>
+    </div>
+  </div>
+
+  <h2 class="title is-1" [style.color]="total_experience2 > total_experience1 ? 'green': 'red'">
+    {{total_experience2 > total_experience1 ?
+    'WINNER': 'LOOSER'
+    }}
+  </h2>
+  <p>
+    TOTAL EXPERIENCE: {{total_experience2}}
+  </p>
+  <div class="columns is-multiline">
+
+    <div class="column is-3" *ngFor="let item of arr2">
+      <app-card [id]="item.id" [name]="item.name" [type]="item.type" [exp]="item.base_experience"
+        [total_experience]="total_experience2"></app-card>
+    </div>
+  </div>
+</div>

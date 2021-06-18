@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <label for="password">Enter length</label>
+      <div class="form-group">
+        <input type="text" class="form-control" (input)="addLengthpassword($event)" placeholder="password">
+      </div>
+    </div>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      Users Letters<input type="checkbox" (change)="IncludeLetters()" class="form-check-input" name="" value="">
+    </label>
+
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      Users Numbers<input type="checkbox" (change)="IncludeNumbers()" class="form-check-input" name="" value="">
+    </label>
+
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      Users Symbols<input type="checkbox" (change)="IncludeSymbol()" class="form-check-input" name="" value="">
+    </label>
+  </div>
+  <button type="button" class="btn btn-outline-primary" (click)="onClick()" [disabled]="!length">Generate</button>
+  <div class="col-md-8" *ngIf="password">
+    <label for="password">Your password</label>
+    <div class="form-group">
+      <input type="text" class="form-control" [value]="password" placeholder="password">
+    </div>
+  </div>
+</div>

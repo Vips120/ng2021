@@ -1,0 +1,8 @@
+img.is-center{
+    cursor: pointer;
+    transition: all 400ms ease-in-out 0s;
+}
+img.is-center:hover {
+
+transform: scale(0.8);
+}
