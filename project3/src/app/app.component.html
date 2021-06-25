@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <p>
+        <span *ngFor="let text of randomText.split(''); let i = index" [class]="isInput(text,Inputtext[i])">
+          {{text}}
+        </span>
+      </p>
+      <div class="form-group">
+        <input type="text" class="form-control" (input)="typeText($event)" placeholder="enter text here...">
+      </div>
+      <button type="button" class="btn btn-outline-primary" *ngIf="randomText === Inputtext">
+        SUCCESS!!!!! WELL DONE
+      </button>
+    </div>
+  </div>
+</div>
