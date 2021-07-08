@@ -1,0 +1,37 @@
+<h1 class="text-center" appClass>{{title}}</h1>
+<hr />
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="width: 18rem;">
+        <img src="{{content[currentIndex].imgUrl}}" class="card-img-top" alt="{{content[currentIndex].name}}">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{content[currentIndex].name}}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <ul class="pagination">
+      <li class="page-item" [appClass]="{disabled:currentIndex=== 0}">
+        <span class="page-link" (click)="currentIndex=currentIndex - 1">Previous</span>
+      </li>
+      <ng-container *ngFor="let c of content; let i =index">
+        <li class="page-item" [appClass]="{active: i === currentIndex}" *ngIf="currentPage(i)">
+          <span class="page-link" (click)="currentIndex=i" [ngStyle]="{ cursor: 'pointer'}">
+            {{i+1}}
+          </span>
+        </li>
+      </ng-container>
+
+      <li class=" page-item">
+        <span class="page-link" [appClass]="{disabled:currentIndex=== content.length-1}"
+          (click)="currentIndex=currentIndex + 1">Next</span>
+      </li>
+    </ul>
+  </nav>
+
+</div>

@@ -10,6 +10,7 @@ export class AppComponent {
   public username!: string;
   public date!: string;
   public currency!: string;
+  public miles!: number;
   User(e: any) {
     this.username = e.target.value;
   };
@@ -18,5 +19,8 @@ export class AppComponent {
   };
   getCurrency(e: any) {
     this.currency = e.target.value;
+  };
+  getMilesInfo(e: any) {
+    this.miles = parseFloat(e.target.value);
   }
 }
